@@ -1,5 +1,7 @@
 # Git Erase
 
+Demonstrates erasing traces of files from Git history.
+
 ## To-Do
 
 ### Test this out
