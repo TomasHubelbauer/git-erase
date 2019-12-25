@@ -9,6 +9,10 @@ jobs:
      - name: Run the workflow
        run: |
         set -x
+        # Set up Git identity
+        git config --global user.email "tomas@hubelbauer.net"
+        git config --global user.name "Tomas Hubelbauer"
+        git remote set-url origin https://tomashubelbauer:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}
         # Erase the demo file and its history
         git filter-branch --force --index-filter "git rm --cached --ignore-unmatch demo.txt" --prune-empty --tag-name-filter cat -- --all
         # Recreate the demo file
