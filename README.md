@@ -17,3 +17,7 @@ Directory: `git filter-branch --force --index-filter "git rm --cached --ignore-u
 
 - Check the new history: `git push --force --verbose --dry-run`
 - Rewrite the history on the remote: `git push --force`
+
+## To-Do
+
+### Fix the workflow not deleting the history
