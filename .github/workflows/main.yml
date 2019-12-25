@@ -17,6 +17,7 @@ jobs:
         git checkout master
         # Erase the demo file and its history
         git filter-branch --force --index-filter "git rm --cached --ignore-unmatch demo.txt" --prune-empty --tag-name-filter cat -- --all
+        git pull --rebase
         git status
         # Recreate the demo file
         date -Iseconds >> demo.txt
