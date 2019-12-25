@@ -13,6 +13,6 @@ jobs:
         git filter-branch --force --index-filter "git rm --cached --ignore-unmatch demo.txt" --prune-empty --tag-name-filter cat -- --all
         # Recreate the demo file
         date -Iseconds >> demo.txt
-        git add demo.text
+        git add demo.txt
         git commit -m "Update the demo value"
         git push
