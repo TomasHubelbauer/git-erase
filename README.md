@@ -1,5 +1,7 @@
 # Git Erase
 
+[**WEB**](https://tomashubelbauer.github.io/git-erase)
+
 Demonstrates erasing traces of files from Git history.
 Based on https://stackoverflow.com/a/872700/2715716.
 
