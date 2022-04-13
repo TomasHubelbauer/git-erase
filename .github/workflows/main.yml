@@ -1,5 +1,5 @@
-on: push
 name: main
+on: push
 
 jobs:
   main:
@@ -7,19 +7,21 @@ jobs:
    steps:
      - name: Check out the repository
        uses: actions/checkout@v3
+       with:
+         ref: master
      - name: Run the workflow
        run: |
         set -x
+        
         # Set up Git identity
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --global user.name "github-actions[bot]"
-        git remote set-url origin https://:${{github.token}}@github.com/${{github.repository}}
-        # Check out the `master` branch because by default GitHub Actions checks out detached HEAD
-        git checkout master
+
         # Erase the demo file and its history
         git filter-branch --force --index-filter "git rm --cached --ignore-unmatch demo.txt" --prune-empty --tag-name-filter cat -- --all
         git pull --rebase
         git status
+        
         # Recreate the demo file
         date -Iseconds >> demo.txt
         git add demo.txt
